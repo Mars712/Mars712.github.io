@@ -1626,7 +1626,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1739971706113),
+    lastupdate: new Date(1739974154360),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2428,9 +2428,22 @@ a|b 表示b能被a整除。
 在处理大数取模运算中运用
 
 以下图片为相关概述：
-![基本概述及公式](https://raw.githubusercontent.com/Mars712/picgo/master/屏幕截图 2025-02-19 104221.png)
+
 以下图片为注意事项：
-![注意事项](https://raw.githubusercontent.com...
+
+3.快速幂
+处理幂次方时可降低时间复杂度
+
+1.递归写法：
+递归代码：
+
+2.位运算写法：
+位运算代码：
+
+
+解释代码：
+ans为幂次方结果，先维护一个a,当移位时将a*a,确保幂次方模拟正确，通过n&amp;1判断最后一位是否为1，
+若为1将ans*a得到最新幂次...
       
     
   </div>

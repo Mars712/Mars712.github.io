@@ -41,11 +41,11 @@
 <meta property="og:title" content="初等数论">
 <meta property="og:url" content="http://example.com/2025/02/19/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/index.html">
 <meta property="og:site_name" content="Mars&#39;blog">
-<meta property="og:description" content="1.整除 a|b 表示b能被a整除。  2.模运算 在处理大数取模运算中运用  以下图片为相关概述： ![基本概述及公式](https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Mars712&#x2F;picgo&#x2F;master&#x2F;屏幕截图 2025-02-19 104221.png) 以下图片为注意事项： ![注意事项](https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Ma">
+<meta property="og:description" content="1.整除 a|b 表示b能被a整除。  2.模运算 在处理大数取模运算中运用  以下图片为相关概述：  以下图片为注意事项：  3.快速幂 处理幂次方时可降低时间复杂度  1.递归写法： 递归代码：  2.位运算写法： 位运算代码：   解释代码： ans为幂次方结果，先维护一个a,当移位时将a*a,确保幂次方模拟正确，通过n&amp;1判断最后一位是否为1， 若为1将ans*a得到最新幂次方结果">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-02-19T12:19:35.000Z">
-<meta property="article:modified_time" content="2025-02-19T13:17:50.260Z">
+<meta property="article:modified_time" content="2025-02-19T14:08:40.847Z">
 <meta property="article:author" content="Mars">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1628,7 +1628,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1739971706113),
+    lastupdate: new Date(1739974154360),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2456,26 +2456,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>在处理大数取模运算中运用</p>
 </blockquote>
 <p>以下图片为相关概述：</p>
-<p>![基本概述及公式](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Mars712/picgo/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/Mars712/picgo/master/屏幕截图</a> 2025-02-19 104221.png)</p>
+<p><img src="https://raw.githubusercontent.com/Mars712/picgo/master/99b9735f890a84fd687b5209855fb2cd.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Mars712/picgo/master/99b9735f890a84fd687b5209855fb2cd.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>以下图片为注意事项：</p>
-<p>![注意事项](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Mars712/picgo/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/Mars712/picgo/master/屏幕截图</a> 2025-02-19 104507.png)</p>
+<p><img src="https://raw.githubusercontent.com/Mars712/picgo/master/5e493ccc7184ee47b2eefb5aaf2a8bb1.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Mars712/picgo/master/5e493ccc7184ee47b2eefb5aaf2a8bb1.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <h2 id="3-快速幂"><a href="#3-快速幂" class="headerlink" title="3.快速幂"></a>3.快速幂</h2><blockquote>
 <p>处理幂次方时可降低时间复杂度</p>
 </blockquote>
-<p>1.递归写法：</p>
-<p>![递归描述](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Mars712/picgo/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/Mars712/picgo/master/屏幕截图</a> 2025-02-19 104612.png)</p>
+<h4 id="1-递归写法："><a href="#1-递归写法：" class="headerlink" title="1.递归写法："></a>1.递归写法：</h4><p><img src="https://raw.githubusercontent.com/Mars712/picgo/master/e3eeb3852d1065b859e2574458bd05d8.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Mars712/picgo/master/e3eeb3852d1065b859e2574458bd05d8.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>递归代码：</p>
-<p>![递归代码](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Mars712/picgo/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/Mars712/picgo/master/屏幕截图</a> 2025-02-19 104941.png)</p>
-<p>2.位运算写法：</p>
-<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Mars712/picgo/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/Mars712/picgo/master/屏幕截图</a> 2025-02-19 105639.png)</p>
+<p><img src="https://raw.githubusercontent.com/Mars712/picgo/master/eb63d2779e17a0ab15e7608f0f07296b.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Mars712/picgo/master/eb63d2779e17a0ab15e7608f0f07296b.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<h4 id="2-位运算写法："><a href="#2-位运算写法：" class="headerlink" title="2.位运算写法："></a>2.位运算写法：</h4><p><img src="https://raw.githubusercontent.com/Mars712/picgo/master/aafefca757a787636defb7944b8be543.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Mars712/picgo/master/aafefca757a787636defb7944b8be543.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>位运算代码：</p>
-<p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Mars712/picgo/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/Mars712/picgo/master/屏幕截图</a> 2025-02-19 110020.png)</p>
+<p><img src="https://raw.githubusercontent.com/Mars712/picgo/master/2775a7d7ec25733d1f208f4932621c61.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Mars712/picgo/master/2775a7d7ec25733d1f208f4932621c61.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <blockquote>
 <p>解释代码：</p>
 <p>ans为幂次方结果，先维护一个a,当移位时将a*a,确保幂次方模拟正确，通过n&amp;1判断最后一位是否为1，</p>
 <p>若为1将ans*a得到最新幂次方结果，并维护a,移位；若不为1，则继续维护a,移位。直至n的二进制位次移动完。</p>
 </blockquote>
-<h2 id="4-二进制转化"><a href="#4-二进制转化" class="headerlink" title="4.二进制转化"></a>4.二进制转化</h2><p>![](<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/Mars712/picgo/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE">https://raw.githubusercontent.com/Mars712/picgo/master/屏幕截图</a> 2025-02-19 195059.png)</p>
+<h2 id="4-二进制转化"><a href="#4-二进制转化" class="headerlink" title="4.二进制转化"></a>4.二进制转化</h2><p><img src="https://raw.githubusercontent.com/Mars712/picgo/master/26996b9d92d7490b80b638500836cc3f.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/Mars712/picgo/master/26996b9d92d7490b80b638500836cc3f.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <blockquote>
 <p>解释代码：</p>
 <p>mask为移位标志符，让1左移31位使得最高位为1的32为2进制数，随后让number&amp;mask查看最高位，输出最高位，至mask移动32位结束为止。</p>
@@ -2504,7 +2502,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-02-19T21:17:50+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-02-19T22:08:40+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Feb 19, 2025</p>
@@ -2644,7 +2642,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B4%E9%99%A4"><span class="toc-text">1.整除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A8%A1%E8%BF%90%E7%AE%97"><span class="toc-text">2.模运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="toc-text">3.快速幂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8C%96"><span class="toc-text">4.二进制转化</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B4%E9%99%A4"><span class="toc-text">1.整除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A8%A1%E8%BF%90%E7%AE%97"><span class="toc-text">2.模运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="toc-text">3.快速幂</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E9%80%92%E5%BD%92%E5%86%99%E6%B3%95%EF%BC%9A"><span class="toc-text">1.递归写法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BD%8D%E8%BF%90%E7%AE%97%E5%86%99%E6%B3%95%EF%BC%9A"><span class="toc-text">2.位运算写法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%BD%AC%E5%8C%96"><span class="toc-text">4.二进制转化</span></a></li></ol>
     </div>
   </section>
 
@@ -3232,7 +3230,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mars'blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这是Mars的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Mars'blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/02/19/初等数论/","name":"初等数论"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Mars'blog","url":"http://example.com/","keywords":null,"description":"这是Mars的博客","author":{"@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这是Mars的博客"},"publisher":{"@type":"Organization","name":"Mars'blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"初等数论","description":"这是Mars的博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/02/19/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/"},"author":{"@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Mars'blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/02/19/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/","wordCount":0,"datePublished":"2025-02-19T12:19:35.000Z","dateModified":"2025-02-19T13:17:50.260Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mars'blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这是Mars的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Mars'blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/02/19/初等数论/","name":"初等数论"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Mars'blog","url":"http://example.com/","keywords":null,"description":"这是Mars的博客","author":{"@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这是Mars的博客"},"publisher":{"@type":"Organization","name":"Mars'blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"初等数论","description":"这是Mars的博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/02/19/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/"},"author":{"@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Mars'blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/02/19/%E5%88%9D%E7%AD%89%E6%95%B0%E8%AE%BA/","wordCount":0,"datePublished":"2025-02-19T12:19:35.000Z","dateModified":"2025-02-19T14:08:40.847Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
