@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/2025/02/23/bfs-and-dfs/"/>
+  <link rel="canonical" href="http://example.com/2025/02/23/bfs-dfs-并查集板子/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -39,13 +39,13 @@
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="bfs and dfs">
-<meta property="og:url" content="http://example.com/2025/02/23/bfs-and-dfs/index.html">
+<meta property="og:url" content="http://example.com/2025/02/23/bfs-dfs-%E5%B9%B6%E6%9F%A5%E9%9B%86%E6%9D%BF%E5%AD%90/index.html">
 <meta property="og:site_name" content="Mars&#39;blog">
 <meta property="og:description" content="dfs 走迷宫  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#include&lt;bits&#x2F;stdc++.h&gt;using namespace std;int mp[110][110],vis[110][110];int bx,by,ex,ey;int dx[4">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-02-23T15:26:34.000Z">
-<meta property="article:modified_time" content="2025-03-29T12:18:28.314Z">
+<meta property="article:modified_time" content="2025-03-29T12:28:03.374Z">
 <meta property="article:author" content="Mars">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1628,7 +1628,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1743250730873),
+    lastupdate: new Date(1743251467133),
     sidebar: {
       for_page: ["blogger","category","tagcloud","text"],
       for_post: ["toc"],
@@ -2381,7 +2381,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/23/bfs-and-dfs/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/02/23/bfs-dfs-并查集板子/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Mars'blog">
   </span>
@@ -2461,6 +2461,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </blockquote>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//bfs</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> dx[<span class="number">4</span>]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>&#125;,dy[<span class="number">4</span>]=&#123;<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">char</span> mp[<span class="number">50</span>][<span class="number">50</span>];</span><br><span class="line"><span class="type">int</span> vis[<span class="number">50</span>][<span class="number">50</span>];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">	<span class="type">int</span> x,y,w;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> nx,<span class="type">int</span> ny)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(nx&gt;=<span class="number">1</span>&amp;&amp;nx&lt;=m&amp;&amp;ny&gt;=<span class="number">1</span>&amp;&amp;ny&lt;=n&amp;&amp;vis[nx][ny]==<span class="literal">false</span>&amp;&amp;mp[nx][ny]==<span class="string">&#x27;.&#x27;</span>)<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">bfs</span><span class="params">(<span class="type">int</span> bx,<span class="type">int</span> by,<span class="type">int</span> bw)</span></span>&#123;</span><br><span class="line">	queue&lt;node&gt;q;</span><br><span class="line">	q.<span class="built_in">push</span>(&#123;bx,by,bw&#125;);</span><br><span class="line">	<span class="keyword">while</span>(!q.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		node p=q.<span class="built_in">front</span>();</span><br><span class="line">		q.<span class="built_in">pop</span>();</span><br><span class="line">		<span class="keyword">if</span>(p.x==m&amp;&amp;p.y==n)<span class="keyword">return</span> p.w;</span><br><span class="line">		<span class="keyword">if</span> (vis[p.x][p.y])</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		vis[p.x][p.y]=<span class="literal">true</span>;</span><br><span class="line">		<span class="type">int</span> nx,ny;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">			nx=p.x+dx[i];</span><br><span class="line">			ny=p.y+dy[i];</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">check</span>(nx,ny))q.<span class="built_in">push</span>(&#123;nx,ny,p.w<span class="number">+1</span>&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">			cin&gt;&gt;mp[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;<span class="built_in">bfs</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><blockquote>
+<p>找祖先</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> fa[<span class="number">200010</span>];</span><br><span class="line"><span class="comment">//find()是找祖先的过程</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(fa[x]==x)<span class="keyword">return</span> x;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        fa[x]=fa[<span class="built_in">find</span>(fa[x])];<span class="comment">//递归</span></span><br><span class="line">        <span class="keyword">return</span> fa[x];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)fa[i]=i;</span><br><span class="line">    <span class="type">int</span> m;</span><br><span class="line">    cin&gt;&gt;m;</span><br><span class="line">    <span class="keyword">while</span>(m--)&#123;</span><br><span class="line">    	<span class="type">int</span> z,x,y;</span><br><span class="line">        cin&gt;&gt;z&gt;&gt;x&gt;&gt;y;</span><br><span class="line">        <span class="keyword">if</span>(z==<span class="number">1</span>)fa[<span class="built_in">find</span>(x)]=<span class="built_in">find</span>(y);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">find</span>(x)==<span class="built_in">find</span>(y))cout&lt;&lt;<span class="string">&quot;Y&quot;</span>&lt;&lt;endl;</span><br><span class="line">            <span class="keyword">else</span> cout&lt;&lt;<span class="string">&quot;N&quot;</span>&lt;&lt;endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
   </div>
   
   
@@ -2484,7 +2491,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-03-29T20:18:28+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-03-29T20:28:03+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Mar 29, 2025</p>
@@ -2506,7 +2513,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2025/02/23/bfs-and-dfs/&title=bfs and dfs - Mars'blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2025/02/23/bfs-dfs-%E5%B9%B6%E6%9F%A5%E9%9B%86%E6%9D%BF%E5%AD%90/&title=bfs and dfs - Mars'blog&summary="
           
           >
           
@@ -2518,7 +2525,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2025/02/23/bfs-and-dfs/&title=bfs and dfs - Mars'blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2025/02/23/bfs-dfs-%E5%B9%B6%E6%9F%A5%E9%9B%86%E6%9D%BF%E5%AD%90/&title=bfs and dfs - Mars'blog&summary="
           
           >
           
@@ -2530,7 +2537,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2025/02/23/bfs-and-dfs/&title=bfs and dfs - Mars'blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2025/02/23/bfs-dfs-%E5%B9%B6%E6%9F%A5%E9%9B%86%E6%9D%BF%E5%AD%90/&title=bfs and dfs - Mars'blog&summary="
           
           >
           
@@ -2597,7 +2604,7 @@ a|b 表示b能被a整除。
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2025/02/23/bfs-and-dfs/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2025/02/23/bfs-dfs-%E5%B9%B6%E6%9F%A5%E9%9B%86%E6%9D%BF%E5%AD%90/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2639,7 +2646,7 @@ a|b 表示b能被a整除。
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#dfs"><span class="toc-text">dfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bfs"><span class="toc-text">bfs</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#dfs"><span class="toc-text">dfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bfs"><span class="toc-text">bfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="toc-text">并查集</span></a></li></ol>
     </div>
   </section>
 
@@ -3227,7 +3234,7 @@ a|b 表示b能被a整除。
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mars'blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这是Mars的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Mars'blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/02/23/bfs-and-dfs/","name":"bfs and dfs"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Mars'blog","url":"http://example.com/","keywords":null,"description":"这是Mars的博客","author":{"@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这是Mars的博客"},"publisher":{"@type":"Organization","name":"Mars'blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"bfs and dfs","description":"这是Mars的博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/02/23/bfs-and-dfs/"},"author":{"@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Mars'blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/02/23/bfs-and-dfs/","wordCount":0,"datePublished":"2025-02-23T15:26:34.000Z","dateModified":"2025-03-29T12:18:28.314Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Mars'blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这是Mars的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Mars'blog"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/02/23/bfs-dfs-并查集板子/","name":"bfs and dfs"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Mars'blog","url":"http://example.com/","keywords":null,"description":"这是Mars的博客","author":{"@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这是Mars的博客"},"publisher":{"@type":"Organization","name":"Mars'blog","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"bfs and dfs","description":"这是Mars的博客","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/02/23/bfs-dfs-%E5%B9%B6%E6%9F%A5%E9%9B%86%E6%9D%BF%E5%AD%90/"},"author":{"@type":"Person","name":"Mars","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Mars'blog","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/02/23/bfs-dfs-%E5%B9%B6%E6%9F%A5%E9%9B%86%E6%9D%BF%E5%AD%90/","wordCount":0,"datePublished":"2025-02-23T15:26:34.000Z","dateModified":"2025-03-29T12:28:03.374Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
